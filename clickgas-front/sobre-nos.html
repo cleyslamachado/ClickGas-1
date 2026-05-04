@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre Nós - Click Gás</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --primary: #416ab4;
+      --primary-600: #348534;
+      --accent: #33c958;
+      --muted: #6b7280;
+      --radius: 12px;
+      --max-width: 1100px;
+      --gap: 20px;
+      --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg);
+      color: #111827;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .site {
+      width: 100%;
+      max-width: none;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      justify-content: flex-start;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--gap);
+      margin-bottom: 32px;
+      background: var(--primary);
+      border-radius: var(--radius);
+      padding: 16px 24px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .logo img {
+      height: 100px;
+      width: auto;
+    }
+    nav {
+      display: flex;
+      gap: 12px;
+    }
+    nav a {
+      padding: 8px 12px;
+      text-decoration: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+    }
+    .right-section {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .diskgas-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .diskgas-header img {
+      height: 32px;
+    }
+    .register-btn {
+      background-color: var(--accent);
+      color: white;
+      padding: 10px 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .register-btn:hover {
+      background-color: var(--primary-600);
+    }
+    .vantagens {
+      background: var(--card);
+      padding: 40px 20px;
+      border-radius: var(--radius);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    .vantagens h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 32px;
+    }
+    .vantagens-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+    .vantagem-item {
+      background: white;
+      width: 250px;
+      padding: 24px;
+      border-radius: var(--radius);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s;
+    }
+    .vantagem-item:hover {
+      transform: translateY(-5px);
+    }
+    .vantagem-item img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 12px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      object-fit: contain;
+    }
+    .promo-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+    }
+    .promo-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      width: 320px;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .promo-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    .promo-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+    }
+    .promo-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+    .promo-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+    .diskgas {
+      background: var(--primary);
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      padding: 40px 20px;
+    }
+    .diskgas img {
+      height: 140px;
+    }
+    .diskgas-info {
+      max-width: 500px;
+      text-align: center;
+    }
+    .diskgas-info h2 {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .diskgas-info p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .diskgas-info p:first-of-type {
+      font-size: 2.5rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    /* Dark Mode */
+    body.dark {
+      background: #1a1a1a;
+      color: #f0f0f0;
+    }
+    body.dark header,
+    body.dark .vantagens,
+    body.dark .promo-card,
+    body.dark .vantagem-item,
+    body.dark .diskgas {
+      background: #2a2a2a;
+      color: #f0f0f0;
+    }
+    body.dark nav a {
+      color: #f0f0f0;
+    }
+    body.dark nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+    body.dark .promo-card p,
+    body.dark .vantagem-item p {
+      color: #cccccc;
+    }
+
+    @media (max-width: 1024px) {
+      body { padding: 16px; }
+      header { flex-direction: column; align-items: center; text-align: center; }
+      .brand { flex-direction: column; gap: 16px; }
+      nav { flex-wrap: wrap; justify-content: center; gap: 8px; }
+      .right-section { justify-content: center; gap: 12px; margin-top: 12px; }
+    }
+    @media (max-width: 768px) {
+      .promo-cards, .vantagens-list { flex-direction: column; align-items: center; }
+      .diskgas { flex-direction: column; text-align: center; gap: 16px; }
+      .diskgas img { height: 120px; }
+      .diskgas-info h2 { font-size: 1.8rem; }
+      .diskgas-info p { font-size: 1rem; }
+      .promo-card, .vantagem-item { width: 90%; max-width: 350px; }
+    }
+    @media (max-width: 480px) {
+      header { padding: 12px 12px; }
+      .logo img { height: 80px; }
+      nav a { font-size: 0.85rem; padding: 6px 10px; }
+      .promo-card img { height: 150px; }
+      .vantagem-item { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header>
+      <div class="brand">
+        <div class="logo">
+          <img src="img/logo.svg" alt="Logo Click Gás" />
+        </div>
+        <nav>
+          <a href="index.html">Início</a>
+          <a href="sobre-nos.html">Sobre nós</a>
+          <a href="produtos.html">Produtos</a>
+        </nav>
+      </div>
+      <div class="right-section">
+        <a href="tel:+5521999999999" class="diskgas-header">
+          <img src="img/diskgas.svg" alt="DiskGas" />
+          <span>(21) 99999-9999</span>
+        </a>
+        <button class="register-btn" onclick="window.location.href='login.html'">Login</button>
+        <button id="theme-toggle" class="register-btn">🌙</button>
+      </div>
+    </header>
+
+    <section class="vantagens">
+      <h2>Quem somos</h2>
+      <p style="max-width: 800px; margin: 0 auto 40px; font-size: 1.1rem; color: var(--muted);">
+        A <strong>Click Gás</strong> nasceu com o propósito de oferecer soluções rápidas, seguras e econômicas para o fornecimento de gás e água para residências, comércios e empresas. 
+        Com uma equipe dedicada e apaixonada por atender bem, construímos uma relação de confiança com nossos clientes, entregando não apenas produtos, mas comodidade e tranquilidade no dia a dia.
+      </p>
+
+      <div class="vantagens-list">
+        <div class="vantagem-item">
+          <img src="img/sobrenos/missao.png" alt="Missão" />
+          <h3>Missão</h3>
+          <p>Levar conforto, praticidade e segurança até você, com entrega ágil e atendimento de qualidade.</p>
+        </div>
+        <div class="vantagem-item">
+          <img src="img/sobrenos/visao.png" alt="Visão" />
+          <h3>Visão</h3>
+          <p>Ser referência no segmento de entregas de gás e água em todo o Brasil.</p>
+        </div>
+        <div class="vantagem-item">
+          <img src="img/sobrenos/valores.png" alt="Valores" />
+          <h3>Valores</h3>
+          <p>Compromisso, respeito, responsabilidade, transparência e inovação constante.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="promocoes">
+      <h2>Por que escolher a Click Gás?</h2>
+      <div class="promo-cards">
+        <div class="promo-card">
+          <img src="img/sobrenos/entrega.png" alt="Entrega Rápida" />
+          <h3>Estamos sempre perto</h3>
+          <p>Graças à nossa rede de parceiros, garantimos entregas em minutos.</p>
+        </div>
+        <div class="promo-card">
+          <img src="img/sobrenos/atendimento.png" alt="Atendimento Humano" />
+          <h3>Atendimento humanizado</h3>
+          <p>Você fala com pessoas reais, preparadas para resolver seu problema rapidamente.</p>
+        </div>
+        <div class="promo-card">
+          <img src="img/sobrenos/confianca.png" alt="Confiança" />
+          <h3>Empresa de confiança</h3>
+          <p>Centenas de clientes atendidos todos os meses com alto índice de satisfação.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="diskgas">
+      <img src="img/diskgaszap.svg" alt="DiskGas Ícone" />
+      <div class="diskgas-info">
+        <p>(21) 99999-9999</p>
+        <p>Entre em contato com a gente e saiba mais sobre nossos serviços!</p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+  const toggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+    toggleButton.textContent = '☀️';
+  }
+
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    const isDark = body.classList.contains('dark');
+    toggleButton.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+  </script>
+</body>
+</html>
+
